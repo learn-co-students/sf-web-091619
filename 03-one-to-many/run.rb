@@ -1,9 +1,9 @@
+# `require` methods for gems and local files
 require 'pry'
-require 'require_all'
 require_relative './tweet'
 require_relative './user'
-# require_all '.'
 
+# Object creation
 karl = User.new('KarlTheFog')
 kermit = User.new('KermitTheFrog')
 
@@ -13,4 +13,5 @@ Tweet.new("as an amphibian, I take offense to that", kermit)
 Tweet.new("as a meteorological phenomenon, idgaf", karl)
 Tweet.new("it's really not easy being green", kermit)
 
+# Pry!
 Pry.start

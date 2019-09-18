@@ -1,3 +1,4 @@
+# Tweet class definition
 class Tweet
     attr_reader :user
     attr_accessor :message

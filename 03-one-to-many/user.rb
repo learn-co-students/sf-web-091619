@@ -1,3 +1,4 @@
+# User class definition
 class User
     attr_reader :username
     # attr_accessor :tweets
