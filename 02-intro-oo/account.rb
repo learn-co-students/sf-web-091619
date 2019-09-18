@@ -31,6 +31,10 @@ end
 
 new_account = Account.new(1, 100)
 
-binding.pry
 
-puts "Account creator"
+
+def method
+
+end
+
+binding.pry
