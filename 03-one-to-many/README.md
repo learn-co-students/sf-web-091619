@@ -29,12 +29,12 @@
 ## Deliverables
 
 * Create a User class. The class should have these methods:
-  - `#initialize` which takes a username
+  - `User#initialize` which takes a username
   - A reader method for the username
-  - `#tweets` that returns an array of Tweet instances
-  - `#post_tweet` that takes a message, creates a new tweet, and adds it to the user's tweet collection
+  - `User#tweets` that returns an array of Tweet instances for the particular User instance
+  - `User#post_tweet` that takes a message, creates a new tweet, and adds it to the user's tweet collection
 * Create a Tweet class. The class should have these methods:
-  - `#initialize`, setter and/or getter methods with appropriate arguments
+  - `Tweet#initialize`, setter and/or getter methods with appropriate arguments
   - `Tweet#message` that returns a string
   - `Tweet#user` that returns an instance of the user class
   - `Tweet.all` that returns all the Tweets created.
