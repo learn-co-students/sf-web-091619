@@ -2,6 +2,10 @@
 
 ## Review
 * *What have we learned so far?*
+    - variables have different scopes
+        - `@, @@, $` need to be conscious of where variables are declared
+    - the intialize method => run when Object.new
+    - `attr` methods as getter and setter methods for instance variables
 
 ## Objectives
 * Introduce domain modeling
