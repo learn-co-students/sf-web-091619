@@ -13,7 +13,7 @@
     7. Creating an array
     8. Saving instances in `all` array
     9. `.all`
-- Instances vs Class
+- Instances vs Classes
   - What makes a method an instance method vs a class method? What is each good for?
   - What about instance vs class variables?
   - `self`
