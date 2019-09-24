@@ -77,7 +77,11 @@ GROUP BY title;
 10. Write the SQL to return the name of all of the artists in the 'Pop' Genre
 
 ```sql
-
+SELECT artists.name, genres.name FROM albums 
+INNER JOIN artists ON albums.artist_id = artists.id
+INNER JOIN tracks ON albums.id = tracks.album_id
+INNER JOIN genres ON tracks.genre_id = genres.id
+GROUP BY artists.name;
 ```
 
 ## BONUS (very hard)
@@ -89,5 +93,13 @@ GROUP BY title;
     from greatest to least
 
 ```sql
-
+SELECT artists.name, COUNT(*) FROM artists 
+INNER JOIN albums ON  artists.id = albums.artist_id
+INNER JOIN tracks ON albums.id = tracks.album_id
+INNER JOIN genres ON tracks.genre_id = genres.id
+WHERE genres.name = "Rock"
+GROUP BY artists.name
+HAVING COUNT(*) > 30
+ORDER BY COUNT(*) DESC;
 ```
+
