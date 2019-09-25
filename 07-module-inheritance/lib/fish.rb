@@ -1,0 +1,2 @@
+class Fish < Animal
+end
