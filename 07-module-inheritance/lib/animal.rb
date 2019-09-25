@@ -5,5 +5,10 @@ class Animal
 	def initialize(name)
 		@name = name
 		@mood = "nervous"
+		self.class.all << self
+	end
+
+	def shout
+		"HELLOOOOOO"
 	end
 end

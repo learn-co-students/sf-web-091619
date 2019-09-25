@@ -1,10 +1,7 @@
 class Dog < Animal
+	include Walkable::InstanceMethods
+	extend Findable::ClassMethods
 	@@dogs = []
-
-	def initialize(name)
-		super(name)
-		@@all << self
-	end
 	
 	def self.all
 		@@dogs

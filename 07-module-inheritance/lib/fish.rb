@@ -1,10 +1,6 @@
 class Fish < Animal
+	extend Findable::ClassMethods
 	@@fishes = []
-
-	def initialize(name)
-		super(name)
-		@@all << self
-	end
 	
 	def self.all
 		@@fishes

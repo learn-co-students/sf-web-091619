@@ -1,13 +1,11 @@
 class Cat < Animal
-	@@cats = []
+	include Walkable::InstanceMethods
+	extend Findable::ClassMethods
 
-	def initialize(name)
-		super(name)
-		@@all << self
-	end
+	@@all = []
 
 	def self.all
-		@@cats
+		@@all
 	end
 end
 

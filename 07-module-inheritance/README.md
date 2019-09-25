@@ -1,4 +1,4 @@
-# Intro to Inheritance
+# Inheritance with Modules
 
 - Limits to using class inheritance `Cat < Animal`, e.g. we can only inherit from one class
 - **Modules**: another way to lend functionality across classes
