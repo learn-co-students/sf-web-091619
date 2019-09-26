@@ -1,8 +1,8 @@
 # Intro to ORMs (Object Relational Mappers)
 
-## Database and SQL Review with Books and Authors
+## Database and SQL Review with Books and Authors (10 min)
 
-*What might the design philosophy of* Domain Modeling *look like in a relational database?*
+*What does the design philosophy of* Domain Modeling *look like in a relational database?*
 
 **1. Create a *books* table and an *authors* table. Books should have a *title* and authors should have a *name*.**
 
@@ -64,7 +64,7 @@ id | name
 4 | Leo Tolstoy
 5 | Mary Oliver
 
-## CRUD Revisited
+## CRUD Revisited (5 min)
 *What are the four ways we can interact with data? What might this interaction look like in SQL? In Ruby?*
 
 **Create**
@@ -94,13 +94,13 @@ id | name
 - Each **row** in a table corresponds to an **instance** of that model.
 - Each **column** in our table corresponds to an **attribute** of that model.
 
-## DO THE THING
+## DO THE THING (45 min)
 
-### Why?
+### Why? (5 min)
 *Problem*: Data is *not persistent*. Ruby stores data in memory. 
 *Solution*: Relational database saved, accessed, and altered in `.db` file.
 
-### Examine structure and tooling
+### Examine structure and tooling (15 min)
 - `run.rb` file in `./bin`
 - Outsourced reqs in `./config/environment.rb`
     - *What is namespacing of SQLite3?*
@@ -119,17 +119,34 @@ id | name
     - `rake task_name` runs task
     - `rake console` better than `irb` because it contains program information
 
-### Wrap SQL in Ruby
-- Nest SQL commands in Ruby class and instance methods
-    - Get all Tweets!
-        - Execute SQL command in method
-        - Return Object instead of Enumerable
-    - Save a tweet
-- SQL Injection!
+### Wrap SQL in Ruby (25 min)
+- Guidelines
+    - Execute SQL command in method
+    - Return Object instead of Enumerable
+- Create methods
+    - `@id` attribute
+    - `#save` a tweet
+- Helper methods
+    - `#in_db?`
+    - `set_instance_id`
+- Read methods
+    - Get `.all` tweets!
+    - Return class instances instead of hashes from database
+    - `.find_by_id`
+- Update method
+    - `#update` with object attribute
+    - ActiveRecord gem will help with `#save` management
+- Delete
+    - `.delete_all` from array, db
+    - `#delete` 
+- ***WARNING*** SQL Injection!
     - [Little Bobby Tables](https://xkcd.com/327/)
-    - 
-- **A tweet belongs to a user and has some message content - must have user_id**
-- **The belongs_to must have a user_id on it**
-- **A user has a username, and has many tweets**
-- **A tweet can have many tags and a tag can have many tweets**
-- 
+    - Parameterize SQL calls to defend!
+
+### For your edification...
+- [x] **A tweet belongs to a user and has some message content - must have user_id**
+- [x] **The belongs_to must have a user_id on it**
+- [x] **A user has a username, and has many tweets**
+- [ ] **A tweet can have many tags and a tag can have many tweets**
+
+Still hungry? [Watch Avi Flombaum build a Metaprogrammed Abstract ORM.](https://www.youtube.com/watch?time_continue=2&v=hts7TjpPw-8)

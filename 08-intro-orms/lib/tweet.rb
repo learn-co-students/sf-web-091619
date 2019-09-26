@@ -2,6 +2,7 @@ class Tweet
   attr_accessor :message, :username
   attr_reader :id
 
+
   @@tweets = []
 
   # Initialize a Tweet instance with a message and username,
@@ -87,7 +88,7 @@ class Tweet
 
   # Put the D in CRUD with .delete_all
   def self.delete_all
-    @@all.clear
+    @@tweets.clear
 
     sql = <<-SQL
       DELETE FROM tweets;
