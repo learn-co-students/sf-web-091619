@@ -1,5 +1,5 @@
 require 'bundler/setup'
-Bundler.require
+Bundler.require # Load all of the gems in our Gemfile
 
 ActiveRecord::Base.establish_connection(
   adapter: 'sqlite3',
