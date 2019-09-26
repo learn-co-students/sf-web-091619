@@ -6,23 +6,64 @@
 
 **1. Create a *books* table and an *authors* table. Books should have a *title* and authors should have a *name*.**
 
+id | title | author_id
+-- | -- | -- 
+1 | Harry Potter | 2
+2 | Neuromancer  | 1
+3 | Benjamin Franklin's (Auto)biography | 3
 
+id | name
+-- | --
+1 | William Gibson
+2 | J.K. Rowling
+3 | Benny Frank Richard
 
-**2. Write the SQL to find all books written by a certain author given the author's id.**
+**2. Write the SQL to find all books written by William Gibson given the author's id.**
 ```SQL
-SELECT * FROM books WHERE author_id = 2;
+SELECT title FROM books WHERE author_id = 1;
 ```
 
-**3. Create a *books* table and an *authors* table where each author can have one or multiple books. Books should have a *title* and authors should have a *name*.**
+**3. Create a *books* table and an *authors* table where each author can have one or multiple books. Each book can haveo one or multiple authors. Books should have a *title* and authors should have a *name*.**
 
 books table
+id | title | author_id
+-- | -- | -- 
+1 | Harry Potter | 2
+2 | Neuromancer  | 1
+3 | Benjamin Franklin's (Auto)biography | 3
 
+author table
+id | name
+-- | --
+1 | William Gibson
+2 | J.K. Rowling
+3 | Benny Frank Richard
+4 | William Faulkner
+5 | Shakespeare
+
+author_books join table
+id | author_id | book_id
+-- | -- | --
+1 | 1 | 2
+2 | 5 | 2
 
 
 ## CRUD Revisited (5 min)
 *What are the four ways we can interact with data? What might this interaction look like in SQL? In Ruby?*
 
-
+Create
+- `CREATE TABLE books (id INTEGER PRIMARY KEY, title TEXT);`
+- `INSERT INTO books (title) VALUES 'Snowcrash'`
+- `snowcrash_book = Book.new("Snowcrash")`
+Read
+- `SELECT title FROM books WHERE author_id = 1;`
+- `snowcrash_book.title`
+Update
+- `UPDATE books SET title = 'New and Selected Poems' WHERE book_id = 3`
+- `book.title = 'New and Selected Poems'`
+Delete
+- `DELETE FROM books WHERE book_id = 7`
+- `book.delete`
 
 ## The Active Record Pattern
 - The Active Record Pattern is an approach to accessing data in a database using object-oriented programming.
