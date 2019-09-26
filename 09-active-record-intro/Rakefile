@@ -4,6 +4,5 @@ require 'sinatra/activerecord/rake' # -> this is where most of our rake tasks co
 
 desc "Start our app console"
 task :console do
-  ActiveRecord::Base.logger = Logger.new(STDOUT) # To log our SQL queries
   Pry.start
 end
