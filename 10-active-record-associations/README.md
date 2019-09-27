@@ -7,12 +7,12 @@
 
 ## Associations
 1. Doctor
-  - Belongs to a department
-  - Has many appointments and patients
+   - Belongs to a department
+   - Has many appointments and patients
 2. Department
-  - Has many doctors
+   - Has many doctors
 3. Patient
-  - Has many appointments and doctors
-  - BONUS: Has many departments
+   - Has many appointments and doctors
+   - BONUS: Has many departments
 4. Appointment
-  - Belongs to doctor and patient
+   - Belongs to doctor and patient
