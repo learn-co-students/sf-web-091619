@@ -4,17 +4,17 @@
 
 ### How the Internet Works
 
-- [ ] Recognize the parts of the request-response lifecycle
+- [X] Recognize the parts of the request-response lifecycle
     - Request from client to server
     - Response from server to client
-- [ ] Define client and describe setting up the request
+- [X] Define client and describe setting up the request
     - HTTP Verbs
     - Request Header
-- [ ] Define server and describe how the response is formatted
+- [X] Define server and describe how the response is formatted
     - Headers
     - Body
-- [ ] Identify HTML as a response type
-- [ ] Identify JSON as a response type
+- [X] Identify HTML as a response type
+- [X] Identify JSON as a response type
 
 ### Ruby Fundamentals
 
