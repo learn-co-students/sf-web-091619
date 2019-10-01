@@ -12,7 +12,7 @@ describe 'Hero Class' do
                 coolness: 5
             },
             {
-                name: 'Lighting Blast',
+                name: 'Lightning Blast',
                 coolness: 10
             }
         ])
@@ -28,14 +28,14 @@ describe 'Hero Class' do
     #         coolness: 5
     #     },
     #     {
-    #         name: 'Lighting Blast',
+    #         name: 'Lightning Blast',
     #         coolness: 10
     #     }
     # ])
 
     it 'Should return its coolest ability' do
         expect( thor.coolest_ability ).to( eq({
-            name: 'Lighting Blast',
+            name: 'Lightning Blast',
             coolness: 10
         }))
     end
