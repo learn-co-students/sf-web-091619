@@ -1,4 +1,4 @@
-# tdd-ruby-code
+# Intro to TDD (Test Driven Development)
 
 * Create a "Hero" Class 
   * Accepts an array of abilities
