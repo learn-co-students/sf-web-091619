@@ -10,9 +10,10 @@ thor = Hero.new([
         coolness: 5
     },
     {
-        name: 'Lighting Blast',
+        name: 'Lightning Blast',
         coolness: 10
     }
 ])
 
 binding.pry
+puts "hi"
