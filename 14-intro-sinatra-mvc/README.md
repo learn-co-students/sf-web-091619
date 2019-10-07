@@ -9,16 +9,11 @@
 - *What do we mean by "convention over configuration?"*
 - A DSL sitting on top of Ruby and Rack
 - Gives us extra functionality and abstraction. Ex:
-  - `Rake`
-  - `Pry`
-  - `rspec`
-  - `capybara`
-  - `React`
-- A lot of overlap with what's we've done already!
-- Explain the Model View Controller (MVC) pattern and give an example
-- Restore model
-- *What does `class Book < ActiveRecord::Base` do for us?*
-- `class ApplicationController < Sinatra::Base`
+    - `Rake`
+    - `Pry`
+    - `rspec`
+    - `capybara`
+- A lot of overlap with what we've learned already! We're still writing Ruby
 
 ## Model View Controller
 - One of many common programming archetectural paradigms
@@ -39,7 +34,7 @@
 - Chez MVC
     - Model = Food
     - Controller = Personnel
-    - View = Moi
+    - View = Moi et toi et l'assiette
 - Why?
     - Agree on logic/pattern so others can read and use our code
         - A lot of a developer's job is dealing with other people's code
@@ -70,9 +65,11 @@
     http://yourdomain.com/api/books/:id | GET | empty | Returns single book
     http://yourdomain.com/api/books/:id | PUT | JSON string | Updates existing book
     http://yourdomain.com/api/books/:id | DELETE | empty | Deletes existing book
-        
 
 ## [Sinatra](http://sinatrarb.com/), revisited
+- Create model and controller
+    - *What does `class Book < ActiveRecord::Base` do for us?*
+    - `class ApplicationController < Sinatra::Base`
 - Create routes, controller methods, views
     - GET `/books/`
     - GET `/books/:id`
@@ -87,18 +84,22 @@
     - GET `/books/:id/edit` and POST/PATCH `/books/:id`
         - *What is `erb` and what does it return?*
         - You can't patch
-- Rack is messy (configuration > convention)
-- `corneal`
-- `shotgun`
-- ERB templates
-    - `<%= %>` vs `<% %>`
-    - `<%= yield %>`
-- File structure
-    - `config.ru` = the runner file
-- Params hash
-- Why it's bad when the view talks to the model
+- Sinatra details
+    - ERB templates
+        - `<%= %>` vs `<% %>`
+        - `<%= yield %>`
+    - File structure
+    - Params hash
 - "The entire Internet is forms." - Wise Instructor Jeff
+
+- [`gem install corneal`](https://github.com/thebrianemory/corneal)
+    - `corneal new books`
+    - `corneal scaffold book`
 - Review
+- *How and why do we use the MVC pattern?*
+- *How Sinatra does serve data in response to RESTful routes?*
+- *How do CRUD actions map to RESTful routes?*
+- *How do we make an HTML form?*
 
 ## Deliverables
 - [ ] Create an index for your site that lists all of the existing books
