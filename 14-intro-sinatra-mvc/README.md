@@ -51,24 +51,19 @@
     - HTTP requests are stateless
 - CRUD and RESTful routing
     - *How do CRUD actions map to SQL commands and HTTP requests?*
-    Operation | SQL | HTTP
-    - | - | -
-    Create | INSERT | PUT/POST
-    Read | SELECT | GET
-    Update | UPDATE | PUT/PATCH
-    Delete | DELETE | DELETE
     - *How do HTTP requests map to RESTful URLs?*
-    URL | HTTP Request| POST Body | Result
-    - | - | - | -
-    http://yourdomain.com/api/books | GET | empty | Returns all books
-    http://yourdomain.com/api/books | POST | JSON string | Creates new book
-    http://yourdomain.com/api/books/:id | GET | empty | Returns single book
-    http://yourdomain.com/api/books/:id | PUT | JSON string | Updates existing book
-    http://yourdomain.com/api/books/:id | DELETE | empty | Deletes existing book
+
+Operation | SQL | HTTP
+- | - | -
+? | ? | ?
+    
+URL | HTTP Request| POST Body | Result
+- | - | - | -
+? | ? | ? | ?
 
 ## [Sinatra](http://sinatrarb.com/), revisited
 - Create model and controller
-    - *What does `class Book < ActiveRecord::Base` do for us?*
+    - *What does* `class Book < ActiveRecord::Base` *do for us?*
     - `class ApplicationController < Sinatra::Base`
 - Create routes, controller methods, views
     - GET `/books/`
@@ -85,7 +80,7 @@
         - *What is `erb` and what does it return?*
         - You can't patch
 - Sinatra details
-    - ERB templates
+    - [ERB templates](https://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html)
         - `<%= %>` vs `<% %>`
         - `<%= yield %>`
     - File structure
@@ -96,10 +91,10 @@
     - `corneal new books`
     - `corneal scaffold book`
 - Review
-- *How and why do we use the MVC pattern?*
-- *How Sinatra does serve data in response to RESTful routes?*
-- *How do CRUD actions map to RESTful routes?*
-- *How do we make an HTML form?*
+    - *How and why do we use the MVC pattern?*
+    - *How Sinatra does serve data in response to RESTful routes?*
+    - *How do CRUD actions map to RESTful routes?*
+    - *How do we make an HTML form?*
 
 ## Deliverables
 - [ ] Create an index for your site that lists all of the existing books
