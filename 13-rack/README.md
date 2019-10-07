@@ -1,32 +1,35 @@
-# Rack & The Internet
+# [Rack & The Internet](https://www.youtube.com/watch?v=yQIJuu3N5EY)
 
 ## The Internet
-* Network Packets
-    * "A formatted unit of data" i.e. an atom of Internet information 
-    * All information transfered on Internet composed of packets
-* *What happens when you type something into the address bar and press enter?*
-    * Make request of server corresponding to domain
-    * Request-Response Lifecycle
 * [ARPANET](https://en.wikipedia.org/wiki/ARPANET)
-    * The first Internet
-    * Much, much, much fewer nodes
+    * The first computer network implementing TCP/IP
+    * The basis for the Internet
 * [`lo`](https://www.cs.ucla.edu/the-day-the-infant-internet-uttered-its-first-words/)
     * The first message on the Internet
     * UCLA 1969
-* [The World Wide Web project](http://info.cern.ch/hypertext/WWW/TheProject.html)
-    * The world's first website
+* Network Packets
+    * "A formatted unit of data" i.e. an atom of Internet information 
+    * All information transfered on Internet composed of packets
+* The World Wide Web
+    * [Information Management: A Proposal](http://info.cern.ch/Proposal.html)
+    * [The world's first website](http://info.cern.ch/hypertext/WWW/TheProject.html)
+    * HTTP + URIs + HTML
     * Everything on the Web is just text
+* [*What happens when you type something into the address bar and press enter?*](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a)
+    * Make request of server corresponding to domain
+    * Request-Response Lifecycle
 * See [What is the Internet?](https://www.youtube.com/watch?v=Dxcc6ycZ73M)
 
 ## Servers & Clients
-* *What is a server? What is a client?*
+* *What is a server? What is a client? What do we call the exchange between them?*
 * Servers
     * Computers that serve web pages (RRL)
     * Domain names, IP addresses
     * Process requests, make responses
 * Clients
-    * Make requests, process responses
     * Us, or, more accurately, our browers
+    * Make requests, process responses
+* Request-Response Lifecycle
 
 ## URLs, Domain Names, IP Addresses, Resources
 * Uniform Resource Locator/Identifier
@@ -35,22 +38,30 @@
     * Resource (`/wiki/ARPANET`)
 * Domain names
     * Represent IP addressses
-    * `traceroute google.com`
-        * Shows route(rs) tp server 
-    * `dig`
+    * `dig google.com`
 * IP addresses
     * Everything has an IP address
     * [Domain Name System servers](https://root-servers.org/) map URLs to IP addresses
+    * `nslookup google.com`
 * What do routers do?
+    * Route!
+    * `traceroute google.com`
 * See requests being made by browser in devtools
 * See [IP Addresses & DNS](https://www.youtube.com/watch?v=5o8CwafCxnU)
 
 ## What does a browser do?
 Tools:
-* ping
-* nslookup
-* traceroute
-* curl
+* `ping`
+    * Packet INternet Groper
+    * Checks and measures connectivity between source and destination 
+* `nslookup`
+    * Name Server LOOKUP
+    * Performs DNS lookups
+* `traceroute`
+    * TRACE ROUTE
+    * Shows the route and time of transit of packets
+* `curl`
+    * Transfer data to/from a server
 
 ## Request/Response Cycle
 * HTTP request methods and Resource
