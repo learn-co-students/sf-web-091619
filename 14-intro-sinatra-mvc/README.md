@@ -32,7 +32,7 @@
         - Interprets user actions
         - Dependent on model and view
 - Chez MVC
-    - Model = Food
+    - Model = Aliments
     - Controller = Personnel
     - View = Moi et toi et l'assiette
 - Why?
@@ -53,13 +53,22 @@
     - *How do CRUD actions map to SQL commands and HTTP requests?*
     - *How do HTTP requests map to RESTful URLs?*
 
-Operation | SQL | HTTP
+Operation | SQL | HTTP request
 - | - | -
-? | ? | ?
+Create | INSERT | POST/PUT
+Read | SELECT | GET
+Update | UPDATE | PATCH/PUT
+Delete | DELETE | DELETE
     
 URL | HTTP Request| POST Body | Result
 - | - | - | -
-? | ? | ? | ?
+http://www.yourdomain.com/books | GET | empty | Return all books
+http://www.yourdomain.com/books | POST | JSON string | Create a new book
+http://www.yourdomain.com/books/:id | GET | empty | Return a single book
+http://www.yourdomain.com/books/:id | PATCH | JSON string | Update a single book
+http://www.yourdomain.com/books/:id | DELETE | empty | Deletes a single book
+
+
 
 ## [Sinatra](http://sinatrarb.com/), revisited
 - Create model and controller
