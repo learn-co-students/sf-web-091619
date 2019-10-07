@@ -41,3 +41,21 @@ Game.create(
   image_url:
 	 "https://images-na.ssl-images-amazon.com/images/I/71ipTP6sGFL._SY679_.jpg"
 )
+
+Game.create(
+	title: "Donkey Kong",
+  description:
+   "Donkey Kong is an arcade game released by Nintendo in 1981. An early example of the platform game genre, the gameplay focuses on maneuvering the main character across a series of platforms while dodging and jumping over obstacles.",
+  rating: 4,
+  image_url:
+	 "https://icdn2.digitaltrends.com/image/donkey-kong-header-2-720x720.jpg"
+)
+
+Game.create(
+	title: "Asteroids",
+  description:
+   "Asteroids is a space-themed multidirectional shooter arcade game designed by Lyle Rains, Ed Logg, and Dominic Walsh and released in November 1979 by Atari, Inc. The player controls a single spaceship in an asteroid field which is periodically traversed by flying saucers.",
+  rating: 5,
+  image_url:
+	 "https://www.gamasutra.com/db_area/images/feature/187385/image1.jpg"
+)

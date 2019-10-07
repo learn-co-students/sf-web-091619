@@ -25,7 +25,7 @@ class GamesController < ApplicationController
 
 	patch '/games/:id' do
 		@game = Game.find(params[:id])
-		@game.update(title: params[:title], description: params[:description], image_url: params[:image_url], rating: params[:rating])
+		@game.update(params[:game])
 
 		redirect "/games/#{@game.id}"
 	end

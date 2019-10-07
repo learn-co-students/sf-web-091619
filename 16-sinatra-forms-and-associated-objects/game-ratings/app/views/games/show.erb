@@ -7,3 +7,10 @@
 	<input type="hidden" name="_method" value="DELETE">
 	<input type="submit" class="button" value="Delete">
 </form>
+
+<h2>Reviews:</h2>
+<ul>
+<% @game.reviews.each do |review| %>
+	<li><%= review.content %></li>
+<% end %>
+</ul>
