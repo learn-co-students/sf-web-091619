@@ -16,8 +16,6 @@
     * HTTP + URIs + HTML
     * Everything on the Web is just text
 * [*What happens when you type something into the address bar and press enter?*](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a)
-    * Make request of server corresponding to domain
-    * Request-Response Lifecycle
 * See [What is the Internet?](https://www.youtube.com/watch?v=Dxcc6ycZ73M)
 
 ## Servers & Clients
@@ -29,7 +27,6 @@
 * Clients
     * Us, or, more accurately, our browers
     * Make requests, process responses
-* Request-Response Lifecycle
 
 ## URLs, Domain Names, IP Addresses, Resources
 * Uniform Resource Locator/Identifier

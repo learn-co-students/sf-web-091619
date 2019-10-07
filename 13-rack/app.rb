@@ -1,10 +1,10 @@
 class Application
-
   def call(env_hash)
+    Song.new("Coffee")
     Song.new("Lost Highway")
-    Song.new("Alone in Kyoto")
+    Song.new("No Guidance")
     Song.new("N Dey Say")
-    Song.new("Fantasia on A Theme by Thomas Tallis")
+    Song.new("Old Town Road")
 
     req = Rack::Request.new(env_hash)
     resp = Rack::Response.new
@@ -12,16 +12,14 @@ class Application
     if req.path.match(/songs/)
       song_list_items = Song.all.map{ |song| "<li>#{song.name}</li>" }.join
       resp.write("
-          <h1>Songs List</h1>
-          <ul>
-            #{song_list_items}
-          </ul>
+        <h1>Songs List</h1>
+        <ul>
+          #{song_list_items}
+        </ul> 
         ")
-    elsif req.path.match(/artists/)
-      resp.write("<h1>Artists List</h1>")
-    else  
-      resp.write("<h1>Not Found</h1>")
-    end
+    else
+      resp.write("Don't you wanna hear my groovy tunes?!")
+    end 
 
     resp.finish
   end
