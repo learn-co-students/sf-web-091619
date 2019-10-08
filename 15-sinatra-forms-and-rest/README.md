@@ -12,6 +12,20 @@
 ## Corneal
 * A Ruby gem that is a Sinatra app generator with Rails-like simplicity (to implement basic directory structure of MVC App in Sinatra)
 
+## Process of creating a sinatra app
+1. corneal new game-ratings
+2. Create database
+   1. create_migration
+   2. migrate
+   3. (seed)
+3. Create model
+   1. `class Game < ActiveRecord::Base`
+4. Create controller
+   1. `class GamesController < ApplicationController`
+   2. Add `use GamesController` to config.ru
+   3. Create first route handler `get '/games' do` and render view
+5. Create view (that corresponds to route handler)
+
 ## Implementation of RESTful Routing
 * `Index`
 * `Show`
