@@ -1,0 +1,39 @@
+<h1>Create a new game and 2 reviews!</h1>
+
+<%# {"game" => {
+	"title" => "",
+	"description" => "",
+	"reviews" => [
+
+	]
+}} %>
+
+<form action="/reviews" method="POST">
+	<div>
+		<label for="title">Title:</label>
+		<input type="text" name="game[title]" id="title">
+	</div>
+
+	<div>
+		<label for="description">Description:</label>
+		<textarea rows="4" cols="50" name="game[description]" id="description"></textarea>
+	</div>
+
+	<div>
+		<label for="image_url">Image URL:</label>
+		<input type="text" name="game[image_url]" id="image_url">
+	</div>
+
+	<div>
+		<label for="rating">Rating:</label>
+		<input type="number" name="game[rating]" id="rating" min="1" max="5">
+	</div>
+
+	<label for="content">Review 1:</label>
+	<textarea id="content" rows="4" cols="50" name="game[reviews][][content]"></textarea>
+
+	<label for="content">Review 2:</label>
+	<textarea id="content" rows="4" cols="50" name="game[reviews][][content]"></textarea>
+
+	<input type="submit">
+</form>

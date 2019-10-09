@@ -2,3 +2,8 @@
 <p>Description: <%= @game.description %></p>
 </p>Rating: <%= @game.rating %></p>
 <img src="<%= @game.image_url %>" alt="<%= @game.title %>">
+
+<form method="POST" action="/games/<%= @game.id %>">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="DELETE" class="button">
+</form>
