@@ -1,6 +1,6 @@
 # Sinatra Form and Associated Objects
 ## CRUD (Create, Read, Update, Delete)
-![crud](crud.png)
+![crud](crud-empty.png)
 
 ## REST (Representational State Transfer)
 ![rest2](rest2.png)
