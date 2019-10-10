@@ -1,106 +1,224 @@
-@media screen {
-  /* --- Reset Styles --- */
-  * {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+/* --- Reset Styles --- */
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  html, body {
-    height: 100%;
-    width: 100%;
-  }
+html,
+body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  /* --- Welcome Page Styles --- */
-  body {
-    background-color: lightblue;
-    color: #333;
-    font-family: Sans-Serif;
-    line-height: 18px;
-  }
+/* --- Navigation --- */
+nav {
+  background-color: var(--red);
+  padding: var(--side-spacing);
+  color: var(--white);
+  font-size: 1.2rem;
+}
 
-  .wrapper {
-    background: #fff;
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
-    margin: 16px auto;
-    max-width: 960px;
-    padding: 2.25%; /* 18px / 800px */
-    width: 85%;
-  }
+nav a {
+  color: var(--white);
+  text-decoration: none;
+}
 
-  h1 {
-    font-size: 36px;
-    line-height: 54px;
-  }
+nav a:hover,
+nav a:focus {
+  color: var(--yellow);
+  text-decoration: underline;
+}
 
-  h2 {
-    border-bottom: 2px solid #ccc;
-    font-size: 24px;
-    line-height: 36px;
-    margin-bottom: 16px;
-  }
+/* --- Main Body --- */
+body {
+  /* --- Variables --- */
+  --main-text: #333;
+  --red: #f9595a;
+  --yellow: #f8d071;
+  --green: #48ab82;
+  --turquoise: #147178;
+  --white: #ffffff;
+  --off-white: #fdfdea;
+  --transparent-black: #000000ab;
+  --side-spacing: 2.25%;
 
-  h3 {
-    font-size: 18px;
-    line-height: 36px;
-  }
+  color: var(--main-text);
+  background-color: var(--off-white);
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: 18px;
+  position: relative;
+  min-height: 100vh;
+}
 
-  p {
-    margin-bottom: 18px;
-  }
+.content-wrapper {
+  padding: var(--side-spacing);
+}
 
-  .main {
-    overflow: hidden;
-  }
+h1 {
+  font-size: 36px;
+  line-height: 54px;
+}
 
-  .content {
-    float: left;
-    width: 60%; /* 480px / 800px */
-  }
+h2 {
+  border-bottom: 2px solid #ccc;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
 
-  .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
-    float: right;
-    padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
-  }
+h3 {
+  font-size: 18px;
+  line-height: 36px;
+}
 
-  .sidebar ul {
-    font-size: 14px;
-  }
+p {
+  margin-bottom: 18px;
+}
 
-  .branding {
-    clear: both;
-  }
+.main {
+  overflow: hidden;
+}
 
-  footer.branding {
-    border-top: 2px solid #ccc;
-    margin-top: 20px;
-    padding-top: 20px;
-  }
+.content {
+  float: left;
+  width: 60%;
+}
+
+/* --- Footer --- */
+footer {
+  border-top: 1px solid #ccc;
+  bottom: 0;
+  padding: 1% var(--side-spacing);
+}
+
+/* --- Forms and Inputs --- */
+.input-wrapper {
+  margin: 15px 0;
+}
+
+.input-wrapper label {
+  display: block;
+  font-size: 20px;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+  min-width: 350px;
+}
+
+input,
+textarea {
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+/* --- Buttons --- */
+.button {
+
+}
+
+/* --- Game Index Page --- */
+#games {
+
+}
+
+#games .game {
+  position: relative;
+  width: 100%;
+}
+
+#games .game .image {
+  width: 100%;
+  height: 100%;
+}
+
+#games .game img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#games .game-info {
+
+}
+
+#games .game-info .title {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--white);
+  text-decoration: none;
+}
+
+#games .game-info .description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Star Rating --- */
+.rating {
+  border: none;
+}
+
+.rating > input {
+  display: none;
+}
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: '\f005';
+}
+
+.rating > label {
+  float: right;
+}
+
+.rating > input:checked ~ label {
+  color: var(--yellow);
+}
+
+/* --- Game Show Page --- */
+.single-game {
+  display: flex;
+  margin-top: 10px;
+}
+
+.single-game img {
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+  padding-right: 20px;
+}
+
+.single-game .description {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.delete-form {
+  display: inline-block;
+}
+
+form input.button {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* --- Media Queries --- */
+@media screen and (max-width: 850px) {
 }
 
 @media screen and (max-width: 600px) {
-  .wrapper {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
+  .content-wrapper {
     box-shadow: none;
     width: auto;
-  }
-
-  .content, .sidebar {
-    float: none;
-    width: 100%;
-  }
-
-  .sidebar {
-    background: transparent;
-    border: none;
-    border-top: 2px solid #ccc;
-    padding: 0;
   }
 
   h1 {
@@ -112,4 +230,7 @@
     font-size: 18px;
     line-height: 24px;
   }
+}
+
+@media screen and (max-width: 550px) {
 }
