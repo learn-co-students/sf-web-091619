@@ -7,6 +7,20 @@
 
 ## What is Rails? 🤔
 ### Making a Rails App 🌪
+- ❓*What's a framework?*
+- Rails is...
+  - A Ruby gem
+   - A set of code libraries
+   - An open-source project
+  - A web framework with the tools needed to build web apps:
+    - Routing
+    - Asset Management 
+    - Database connections
+  - A MVC framework
+   - Good architecture baked in
+   - Logic in models, content displayed in views code, flow in controllers
+  - Not a programming language
+  - As fast or slow as you want it to be 
 - ❓*What's an example of domain and a model in that domain?*
 - Build it out!
   - Install `gem install rails`
@@ -137,6 +151,9 @@ automatically
     - `render :bananas` explicitly renders `bananas.html.erb`
     - Controller reference optional
 ## Closing Remarks 🙏
+  - **Administrative: Pair Programming and Blogs**
+    - Blogs: Be as technical as you can
+    - Pair Programming: Two bodies, one computer
   - Go slow to go fast
   - We'll flesh out the details over the next week
   - What is Rails teaching you about software engineering?
