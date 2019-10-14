@@ -1,0 +1,12 @@
+<%= form_for @dinner do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :cost %>
+	<%= f.text_field :cost %>
+
+	<%= f.label :user_id, "User" %>
+	<%= f.select :user_id, @users.map {|u| [u.name, u.id]} %>
+
+	<%= f.submit %>
+<% end %>
