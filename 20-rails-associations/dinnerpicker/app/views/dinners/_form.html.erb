@@ -8,5 +8,7 @@
 	<%= f.label :user_id, "User" %>
 	<%= f.select :user_id, @users.map {|u| [u.name, u.id]} %>
 
+  <%= f.collection_select(:user_id, User.all, :id, :name) %>
+
 	<%= f.submit %>
 <% end %>

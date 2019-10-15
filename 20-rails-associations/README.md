@@ -76,7 +76,12 @@ end
 ```html
 <%= f.label :user_id, "User" %>
 <%= f.select :user_id, @users.map {|u| [u.name, u.id]} %>
+
+or
+
+<%= f.collection_select(:user_id, User.all, :id, :name) %>
 ```
+https://guides.rubyonrails.org/form_helpers.html#option-tags-from-a-collection-of-arbitrary-objects
 
 ## Extras:
 ### Buttons & Links in Rails
