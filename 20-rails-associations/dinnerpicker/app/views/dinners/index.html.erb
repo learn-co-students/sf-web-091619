@@ -1,1 +1,11 @@
 <h1>Dinners:</h1>
+
+<ul>
+	<% @dinners.each do |dinner| %>
+		<li>
+			<%= dinner.name %> 
+			| $<%= dinner.cost %> 
+			| <%= link_to dinner.user.name, dinner.user %>
+		</li>
+	<% end %>
+</ul>

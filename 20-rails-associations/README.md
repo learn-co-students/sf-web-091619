@@ -3,6 +3,11 @@
 	- `rails new dinnerpicker`
 	- `rails g resource User name` & `rails g resource Dinner name cost user:references`
 	- What does `rails g resource` create?
+  	- Model
+  	- Migration
+  	- Controller
+  	- Views Folder
+  	- Routes
 	- `rails db:migrate`
 
 ## Models
@@ -15,8 +20,8 @@
 - Create views:
   - index.html.erb
   - show.html.erb
-  - new.html.erb (`<%= render partial: "form" %>`)
-  - edit.html.erb (`<%= render partial: "form" %>`)
+  - new.html.erb
+  - edit.html.erb
   - _form.html.erb
 
 ## Extras:
