@@ -1,6 +1,6 @@
 <%= form_for @user do |f| %>
 	<%= f.label :name %>
-	<%= f.text_field :name %>
+	<%= f.text_field :name, class: "form-control" %>
 
-	<%= f.submit %>
+	<%= f.submit button_text, class: 'btn btn-primary' %>
 <% end %>
