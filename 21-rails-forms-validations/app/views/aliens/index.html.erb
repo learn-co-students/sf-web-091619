@@ -1,11 +1,9 @@
 <h1>All Aliens<h1>
 
 <h2>Search</h2>
-<%= form_tag("/search", method: "get") do |f| %>
-  <%= label_tag :name, "Name:" %>
-  <%= text_field_tag :name %>
-  <%= label_tag :dangerous, "Dangerous" %>
-  <%= check_box_tag :dangerous %>
+<%= form_tag(aliens_path, method: "get") do |f| %>
+  <%= label_tag :search, "Name:" %>
+  <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search" %>
 <% end %>
 

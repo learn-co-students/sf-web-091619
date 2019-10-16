@@ -101,6 +101,17 @@
   - Follows one more request
 - *What's the difference between `render` and `redirect_to`?*
 
+## Administrative 🔑
+
+- Attendance
+- Monitor Mounts
+- Code Challenge
+  - Routes
+  - MVC
+  - Associations
+  - Forms
+  - Validations
+
 ## External Resources 📜
 
 - [Active Record Validations Docs](http://guides.rubyonrails.org/active_record_validations.html)
