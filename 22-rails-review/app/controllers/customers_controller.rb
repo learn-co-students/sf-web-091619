@@ -1,10 +1,11 @@
 class CustomersController < ApplicationController
+  before_action :find_customer_by_id, only: [:show, :edit, :update, :destroy]
+
   def index
     @customers = Customer.get_customers(params[:sort])
   end
 
   def show
-    @customer = Customer.find(params[:id])
   end
 
   def new
@@ -21,26 +22,27 @@ class CustomersController < ApplicationController
   end
 
   def destroy
-    @customer = Customer.find(params[:id])
     @customer.destroy
     redirect_to(customers_path)
   end
 
   def edit
-    @customer = Customer.find(params[:id])
   end
 
   def update
-    @customer = Customer.update(customer_params)
+    @customer.update(customer_params)
     if @customer.valid?
       redirect_to(@customer)
     else
-      @customer = Customer.find(params[:id])
-      render(:show)
+      redirect_to(edit_customer_path)
     end
   end
 
   private
+
+  def find_customer_by_id
+    @customer = Customer.find(params[:id])
+  end
 
   def customer_params
     params.require(:customer).permit(:name, :drink_id)
