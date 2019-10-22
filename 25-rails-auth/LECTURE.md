@@ -281,3 +281,68 @@ end
 
 ## BONUS: Self-Referential Relationships
 
+- [Self Joins Doc](https://guides.rubyonrails.org/association_basics.html#self-joins)
+  - `has_many :subordinates, class_name: “Employee”, foreign_key: “manager_id”`
+    - `:subordinates` is an alias
+    - `:subordinates` is an instance of the `Employee` model
+    - `manager_id` is key in `Employee` table used to identify instance as manager
+  - `belongs_to :manager, class_name: "Employee", optional: true`
+    - `:manager` is an alias
+    - `:manager` is an instance of the `Employee` model
+    - It's optional to have a manager
+
+`###_create_employees.rb`
+
+```ruby
+class CreateEmployees < ActiveRecord::Migration
+  def change 
+    create_table :employees do |t|
+      t.references :manager
+
+      t.timestamps
+    end
+  end
+end
+```
+
+- *What if we want an employee to have more than one manager?*
+
+- Many-to-Many Self Joins
+  - Like any many-to-many relationship, we need a join table
+  - Let's try this out with hosts and guests!
+
+`db/migrations/#####_create_parties.rb`
+
+```ruby
+class CreateParties < ActiveRecord::Migration
+  def change 
+    create_table :parties do |t|
+      t.references :host
+      t.references :guest
+
+      t.timestamps
+    end
+  end
+end
+```
+
+`app/models/user.rb`
+
+```ruby
+class User < ApplicationRecord
+  # Validations and has_secure_password
+
+  has_many :guests, through: :guest_attendances, source: :guest
+  has_many :guest_attendances, foreign_key: :host_id, class_name: "Party"
+
+  has_many :hosts, through: :host_attendances, source: :host
+  has_many :host_attendances, foreign_key: :guest_id, class_name: "Party"
+end
+```
+
+```ruby
+class Party < ApplicationRecord
+  belongs_to :guest, foreign_key: "guest_id", class_name: "User"
+  belongs_to :host, foreign_key: "host_id", class_name: "User
+end
+```
