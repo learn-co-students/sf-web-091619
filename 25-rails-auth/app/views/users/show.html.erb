@@ -1,5 +1,16 @@
 <h1>Welcome, <%= @user.username %> </h1>
 
-<% if logged_in? && @user == current_user %>
-  
+<% if logged_in? && @user != current_user %>
+  <%= form_tag parties_path do %>
+    <%= hidden_field_tag :host_id, current_user.id %>
+    <%= hidden_field_tag :guest_id, @user.id %>
+    <%= submit_tag "Host this User" %>
+  <% end %>
+<% elsif logged_in? && @user == current_user %>
+  <h2>Guests</h2>
+  <ul>
+    <% @user.guests.each do |guest| %>
+      <li><%= guest.username %></li>
+    <% end %>
+  </ul>
 <% end %> 
