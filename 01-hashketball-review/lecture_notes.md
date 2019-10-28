@@ -28,7 +28,7 @@
 - Keep code DRY (DON'T REPEAT YOURSELF) principle: refactor code if redundant
 - Iterator methods: `#each`, `#map`, `#find` & `#select`
 - Single-line blocks versus do & end multi-line blocks
-- Questions!?
+- Questions!
 
 ## More Administrative
 
