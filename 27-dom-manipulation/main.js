@@ -1,12 +1,30 @@
 console.log('hello');
 
+// my_variable = "hello"
+let myVariable = "hello"
+const myVariable2 = "hello"
+var myVariable3 = "hello"
+
+// RUBY
+// def my_ruby_method(argument)
+  // argument  
+// end
+
+// JS
+function someFunctionName(argument) {
+  console.log("hello")
+
+  // return argument
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
   scareAfterTimeout();
   greetRepeatedly();
   generateTimestamp();
   randomBackgroundColor();
   interactWithWeekdays();
-  generatePrimes();
+  generateSpongebobCharacters();
 });
 
 function scareAfterTimeout() {
@@ -45,6 +63,7 @@ function zeroPrefix(value) {
 function randomBackgroundColor() {
   const colors = [null, 'blue', 'red', 'green'];
   const index = Math.floor(Math.random() * colors.length);
+
   const color = colors[index];
   if (color !== null) {
     document.body.style.backgroundColor = color;
@@ -60,7 +79,7 @@ function interactWithWeekdays() {
   }
 }
 
-function generatePrimes() {
+function generateSpongebobCharacters() {
   let list = document.getElementById('spongebob');
   let characters = [
     'SpongeBob SquarePants',

@@ -1,4 +1,5 @@
 # JavaScript Basics: DOM Manipulation
+JS is awesome: https://threejs.org/
 
 ## JavaScript Basics
 - Variables (`const`, `let`, `var`)
