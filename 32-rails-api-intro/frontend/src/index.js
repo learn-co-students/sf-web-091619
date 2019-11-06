@@ -14,11 +14,13 @@ const createAnimal = body => {
 };
 
 const renderAnimal = animal => {
+  // console.log(animal)
+  // debugger
   return `
   <tr>
     <td>${animal.name}</td>
     <td>${animal.gender}</td>
-    <td>${animal.species}</td>
+    <td>${animal.species.name}</td>
   </tr>
   `;
 };
