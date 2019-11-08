@@ -13,14 +13,23 @@
 - Key Value Assignment Shortcut
 - Spread Operator
 
+
+
+
+
 ## Functions
 
 ### Anonymous Functions vs. Named Functions
 
 ```javascript
 // Named Function
+function iHaveAName() {
+  console.log('Hi')
+}
 
 // Anonymous Function
+const myFunc = function(){}
+const myOtherFunc = () => {console.log('hi')}
 
 // Anonymous Function within .map
 [1, 2, 3].map(function(num) {
@@ -32,10 +41,14 @@
 
 ```javascript
 // Function Expression
+const myFunction = () => console.log('hi')
 
 // Function Declaration **always starts with the function keyword**
-
+function myFunctionName() {
+  console.log('hi from inside the function declaration')
+}
 ```
+
 
 ### Passing Functions Around as Arguments (Callbacks) & ES6 Iterators (map, forEach, find)
 
@@ -43,9 +56,15 @@
 const names = ['dracular', 'voldemort', 'the hash slinging slasher'];
 
 names.map(name => name.toUpperCase()); // ["DRACULAR", "VOLDEMORT", "THE HASH SLINGING SLASHER"]
+names.map(function(name) {
+  return name.toUpperCase()
+})
+
 names.forEach(name => console.log(name)); // logs each name
-names.find(name => name.incudes('volde')); // "voldemort"
+names.find(name => name.includes('volde')); // "voldemort"
 ```
+
+
 
 
 
@@ -57,34 +76,37 @@ names.find(name => name.incudes('volde')); // "voldemort"
 - Block statements: Contrary to the `var` keyword, the `let` and `const` keywords support the declaration of local scope inside block statements.
 
 ```javascript
-
+// Global scope
 function someFunction() {
+  // Local scope #1
+  const anotherVar = "hi"
 
   function someOtherFunction() {
-
+    // Local scope #2
+    const myVar = "hi"
   }
 }
-
+// Global scope
 
 function anotherFunction() {
-
+  // Local scope #3
 }
 
+// Global scope
+
+let tryAccessingMe
 
 if (true) {
+  tryAccessingMe = "Now I'm a string"
   var youCanAccessMeOutside = 'Hi from within the block';
   let dontTryToAccessMeOutside = "This won't work";
   const iAlsoStayWithinTheBlock = 'Staying here';
 }
 
-youCanAccessMeOutside; 
-dontTryToAccessMeOutside; 
+youCanAccessMeOutside;
+dontTryToAccessMeOutside;
 iAlsoStayWithinTheBlock;
 ```
-
-
-
-
 
 
 ## Hoisting
@@ -98,11 +120,18 @@ function hoistMe() {
   console.log('Hi from the function');
 }
 
+cantHoistMe()
+const cantHoistMe = () => console.log('this wont work')
+
 // This ↓ is the assignment which does not get hoisted
 meToo = 'Hi from the variable';
 console.log(meToo); // 'Hi from the variable'
 // This ↓ is the declaration, that's why it's ok to put it at the bottom
 var meToo;
+
+// THIS ↓ WILL NOT WORK (variable declaration is hoisted but assignment is not)
+console.log(anotherOne)
+var anotherOne = "hi"
 
 // 'let' and 'const' variables are not hoisted in the same way that 'var' variables are
 // Function expressions are also NOT hoisted
@@ -131,7 +160,7 @@ _context is what the value of `this` is_
 // function -> global window
 
 function whatIsThis() {
-  // 
+  // `this` refers to the global window object
   console.log(this);
 }
 
@@ -142,26 +171,22 @@ class Person {
 	}
 	
   sayHi() {
-    // 
+    // `this` refers to the object (instance) itself
     this.hobbies.forEach(function(hobby) {
-      // 
+      // in here `this`  is the window object (or `undefined` because of strict mode)
       console.log(`I like to ${hobby} at ${this.age}.`);
 		});
 		
-		// this.hobbies.forEach(hobby => {
-		// 	// 
-    //   console.log(`I like to ${hobby} at ${this.age}.`);
-    // });
+		this.hobbies.forEach(hobby => {
+			// with an arrow function, the `this` gets bound to the outer `this` 
+      console.log(`I like to ${hobby} at ${this.age}.`);
+    });
   }
 }
 
 var bob = new Person();
 bob.sayHi();
 ```
-
-
-
-
 
 
 ## Destructuring & Dynamic Object Keys
@@ -173,12 +198,14 @@ const spaceship = {
 }
 
 // How can we access the pilot inside the spaceship?
-// 1. 
+// 1. Dot notation
+const pilot = spaceship.pilot
 
-// 2. 
+// 2. Bracket notation
+const pilot = spaceship["pilot"]
 
-
-// 3. 
+// 3. Destructuring
+const { pilot, guidance, chef } = spaceship
 
 
 console.log(pilot) // 'elon musk'
@@ -193,11 +220,6 @@ const jobs = ['pilot', 'guidance', 'chef']
 jobs.forEach(job => console.log(spaceship[job]))
 ```
 
-
-
-
-
-
 ## Key Value Assignment Shortcut
 - If the name of the key is the same as the name of the variable we want to assign to that key we can use this shortcut
 
@@ -206,15 +228,14 @@ const pizza = 'pepperoni'
 const restaurant = 'Awesome SF Pizza'
 
 // The long way
-
+const pizzaObj = {
+  pizza: pizza,
+  restaurant: restaurant
+}
 
 // Shortcut
-
+const pizzaObj2 = { pizza, restaurant }
 ```
-
-
-
-
 
 
 ## Spread Operator
