@@ -13,13 +13,8 @@ class AnimalsController < ApplicationController
 
 	# POST /animals
 	def create
-		animal = Animal.new(animal_params)
-		# byebug
-
-		# {animal: {
-		# 	name: "",
-		# 	gender: ""
-		# }}
+		species = Species.find_or_create_by(name: animal_params[:species].capitalize)
+		animal = Animal.new(name: animal_params[:name], gender: animal_params[:gender], species: species)
 
 		if animal.save
 			render json: animal
@@ -46,6 +41,6 @@ class AnimalsController < ApplicationController
 
 	private
 	def animal_params
-		params.require(:animal).permit(:name, :gender, :species_id)
+		params.require(:animal).permit(:name, :gender, :species)
 	end
 end
